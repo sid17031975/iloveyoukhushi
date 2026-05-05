@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Heart, My Everything 💙</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- Floating Hearts Background -->
+  <div class="hearts-bg" id="heartsBg"></div>
+
+  <!-- ===================== SECTION 1: GATEKEEPER ===================== -->
+  <section id="gatekeeper" class="section-gatekeeper">
+    <div class="gate-content animate-fadein">
+      <div class="gate-icon">💙</div>
+      <h1 class="gate-title">Do you love him?</h1>
+      <p class="gate-subtitle">Answer carefully, darling...</p>
+      <div class="gate-buttons">
+        <button id="yesBtn" class="btn-yes" onclick="handleYes()">Yes 💙</button>
+        <button id="noBtn" class="btn-no" onmouseover="runAway(event)">No</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 2: MAIN CONTENT ===================== -->
+  <section id="mainContent" class="section-main hidden">
+
+    <!-- Hero -->
+    <div class="hero-area">
+      <div class="hero-text animate-fadein-delay">
+        <span class="hero-eyebrow">A love story told in moments</span>
+        <h2 class="hero-heading">Our Journey Together</h2>
+        <p class="hero-sub">Every photo below is a piece of my heart.<br>Click each one to relive the magic. 💙</p>
+      </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery-section">
+      <h3 class="gallery-title">Moments I Treasure Forever</h3>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+
+    <!-- Proposal Final Section -->
+    <div class="proposal-section" id="proposalSection">
+      <div class="proposal-inner">
+        <div class="proposal-hearts-row">💙 💙 💙</div>
+        <h2 class="proposal-heading">Will you be mine forever?</h2>
+        <p class="proposal-text">
+          Every sunrise is brighter because of you.<br>
+          Every moment feels like a dream I never want to wake from.<br>
+          You are my favourite person in every universe that exists.
+        </p>
+        <button class="btn-forever" onclick="triggerConfetti()">Yes, Forever & Always 💙</button>
+      </div>
+      <canvas id="confettiCanvas"></canvas>
+    </div>
+
+  </section>
+
+  <!-- ===================== MODAL ===================== -->
+  <div id="modal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modalMediaWrap" class="modal-media-wrap"></div>
+      <p id="modalMessage" class="modal-message"></p>
+    </div>
+  </div>
+
+  <script src="/static/js/hearts.js"></script>
+  <script src="/static/js/gallery.js"></script>
+  <script src="/static/js/modal.js"></script>
+  <script src="/static/js/confetti.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
