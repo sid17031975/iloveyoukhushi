@@ -11,11 +11,134 @@
 </head>
 <body>
 
-  <!-- Floating Hearts Background -->
   <div class="hearts-bg" id="heartsBg"></div>
 
   <!-- ===================== SECTION 1: GATEKEEPER ===================== -->
   <section id="gatekeeper" class="section-gatekeeper">
+
+    <!-- LEFT CORNER: romantic watercolour proposal SVG painting -->
+    <div class="gate-art gate-art-left">
+      <svg viewBox="0 0 300 460" xmlns="http://www.w3.org/2000/svg" class="proposal-svg">
+        <defs>
+          <radialGradient id="bgWash" cx="50%" cy="55%" r="65%">
+            <stop offset="0%"   stop-color="#fce7f3" stop-opacity="0.85"/>
+            <stop offset="70%"  stop-color="#e0f2fe" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#fff"    stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="pinkPool" cx="50%" cy="90%" r="55%">
+            <stop offset="0%"   stop-color="#f9a8d4" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="#fce7f3" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="soft"><feGaussianBlur stdDeviation="1.5"/></filter>
+          <filter id="paint">
+            <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="3" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="2.8" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+
+        <!-- background colour washes -->
+        <ellipse cx="150" cy="280" rx="165" ry="215" fill="url(#bgWash)"/>
+        <ellipse cx="150" cy="450" rx="135" ry="45"  fill="url(#pinkPool)"/>
+        <ellipse cx="230" cy="90"  rx="80"  ry="65"  fill="#fce7f3" opacity="0.28"/>
+
+        <!-- scattered petals -->
+        <g filter="url(#soft)" opacity="0.6">
+          <ellipse cx="28"  cy="78"  rx="6"  ry="11" fill="#f9a8d4" transform="rotate(-30,28,78)"/>
+          <ellipse cx="268" cy="52"  rx="5"  ry="9"  fill="#fbcfe8" transform="rotate(22,268,52)"/>
+          <ellipse cx="278" cy="195" rx="5"  ry="8"  fill="#f9a8d4" transform="rotate(-18,278,195)"/>
+          <ellipse cx="20"  cy="338" rx="6"  ry="11" fill="#fbcfe8" transform="rotate(38,20,338)"/>
+          <ellipse cx="272" cy="368" rx="5"  ry="9"  fill="#f9a8d4" transform="rotate(-22,272,368)"/>
+          <ellipse cx="48"  cy="442" rx="7"  ry="12" fill="#fbcfe8" transform="rotate(12,48,442)"/>
+          <ellipse cx="242" cy="422" rx="6"  ry="10" fill="#f9a8d4" transform="rotate(-28,242,422)"/>
+        </g>
+
+        <!-- ── GIRL (right side, standing) ── -->
+        <!-- dress — painterly wash -->
+        <ellipse cx="178" cy="385" rx="44" ry="80" fill="#f472b6" opacity="0.82" filter="url(#paint)"/>
+        <ellipse cx="178" cy="385" rx="37" ry="70" fill="#ec4899" opacity="0.4"/>
+        <path d="M140 345 Q152 425 140 462 Q178 474 216 462 Q204 425 216 345 Z" fill="#fce7f3" opacity="0.35"/>
+        <!-- torso -->
+        <ellipse cx="178" cy="316" rx="21" ry="27" fill="#f5c9a0" opacity="0.93"/>
+        <!-- neck -->
+        <rect x="172" y="296" width="12" height="20" rx="6" fill="#f5c9a0"/>
+        <!-- head -->
+        <ellipse cx="178" cy="275" rx="25" ry="29" fill="#f5c9a0" opacity="0.97"/>
+        <!-- long hair -->
+        <path d="M155 263 Q132 305 137 358 Q152 353 157 336 Q161 314 163 288 Z" fill="#2d1500" opacity="0.88"/>
+        <path d="M201 263 Q223 298 219 353 Q208 348 204 327 Q199 304 197 280 Z" fill="#2d1500" opacity="0.78"/>
+        <path d="M156 265 Q149 286 152 316 Q163 311 165 292 Z" fill="#4a2000" opacity="0.42"/>
+        <!-- purple flower -->
+        <circle cx="208" cy="267" r="8"  fill="#a855f7" opacity="0.92"/>
+        <circle cx="208" cy="267" r="3.5" fill="#fef9c3" opacity="0.97"/>
+        <ellipse cx="200" cy="265" rx="4" ry="2.5" fill="#c084fc" opacity="0.7"/>
+        <ellipse cx="216" cy="265" rx="4" ry="2.5" fill="#c084fc" opacity="0.7"/>
+        <!-- closed happy eyes -->
+        <path d="M168 278 Q173 275 178 278" stroke="#2d1500" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <path d="M183 278 Q188 275 193 278" stroke="#2d1500" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <!-- blush -->
+        <ellipse cx="165" cy="284" rx="7" ry="4" fill="#fda4af" opacity="0.65"/>
+        <ellipse cx="191" cy="284" rx="7" ry="4" fill="#fda4af" opacity="0.65"/>
+        <!-- smile -->
+        <path d="M172 291 Q178 297 184 291" stroke="#be185d" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <!-- girl arms -->
+        <path d="M157 320 Q143 305 136 292 Q131 283 139 278 Q147 276 152 288 Q157 303 160 317 Z" fill="#f5c9a0" opacity="0.9"/>
+        <path d="M199 318 Q212 303 218 294 Q222 286 229 290 Q235 296 229 307 Q218 320 208 327 Z" fill="#f5c9a0" opacity="0.85"/>
+
+        <!-- ── BOY (left side, kneeling on one knee) ── -->
+        <!-- trousers -->
+        <path d="M85 395 Q78 428 75 462 Q95 467 108 462 Q105 430 108 395 Z" fill="#1e3a5f" opacity="0.9"/>
+        <path d="M108 395 Q112 428 116 458 Q132 462 142 457 Q134 426 131 395 Z" fill="#1e3a5f" opacity="0.82"/>
+        <!-- kneeling leg -->
+        <ellipse cx="91" cy="462" rx="17" ry="7" fill="#1e3a5f" opacity="0.75"/>
+        <!-- shirt/torso -->
+        <ellipse cx="108" cy="340" rx="27" ry="43" fill="#e0f2fe" opacity="0.95" filter="url(#paint)"/>
+        <ellipse cx="108" cy="340" rx="21" ry="35" fill="#bae6fd" opacity="0.32"/>
+        <!-- waist -->
+        <ellipse cx="108" cy="372" rx="24" ry="18" fill="#cbd5e1" opacity="0.7"/>
+        <!-- neck -->
+        <rect x="102" y="297" width="12" height="19" rx="6" fill="#c8845a"/>
+        <!-- head -->
+        <ellipse cx="108" cy="277" rx="24" ry="27" fill="#c8845a" opacity="0.97"/>
+        <!-- hair -->
+        <path d="M86 264 Q82 253 95 249 Q108 245 122 249 Q135 253 131 264 Q120 256 108 257 Q96 256 86 264 Z" fill="#1a0a00" opacity="0.92"/>
+        <!-- glasses — as in your photo -->
+        <rect x="91"  y="272" width="13" height="9" rx="4" stroke="#9ca3af" stroke-width="1.2" fill="rgba(186,230,253,0.25)"/>
+        <rect x="106" y="272" width="13" height="9" rx="4" stroke="#9ca3af" stroke-width="1.2" fill="rgba(186,230,253,0.25)"/>
+        <line x1="104" y1="276" x2="106" y2="276" stroke="#9ca3af" stroke-width="1"/>
+        <line x1="84"  y1="276" x2="91"  y2="276" stroke="#9ca3af" stroke-width="0.8"/>
+        <line x1="119" y1="276" x2="126" y2="276" stroke="#9ca3af" stroke-width="0.8"/>
+        <!-- eyes -->
+        <circle cx="98"  cy="277" r="2.5" fill="#1a0a00"/>
+        <circle cx="113" cy="277" r="2.5" fill="#1a0a00"/>
+        <!-- boy blush -->
+        <ellipse cx="93"  cy="286" rx="6" ry="3.5" fill="#fda4af" opacity="0.38"/>
+        <ellipse cx="123" cy="286" rx="6" ry="3.5" fill="#fda4af" opacity="0.38"/>
+        <!-- arm extending ring box -->
+        <path d="M130 326 Q154 307 164 297 Q172 291 175 297 Q177 305 167 311 Q154 320 140 334 Z" fill="#c8845a" opacity="0.9"/>
+        <!-- ring box -->
+        <rect x="166" y="287" width="17" height="13" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+        <rect x="168" y="292" width="13" height="5"  rx="1.5" fill="#f9a8d4"/>
+        <circle cx="174" cy="289" r="2" fill="#f59e0b" opacity="0.85"/>
+        <circle cx="176" cy="286" r="1" fill="#fff" opacity="0.9"/>
+        <!-- other arm -->
+        <path d="M86 330 Q70 340 65 360 Q63 372 71 374 Q79 375 83 365 Q87 351 90 338 Z" fill="#c8845a" opacity="0.87"/>
+
+        <!-- floating hearts -->
+        <text x="232" y="240" font-size="17" opacity="0.72" class="svg-float" style="animation-delay:0s">💖</text>
+        <text x="46"  y="210" font-size="13" opacity="0.58" class="svg-float" style="animation-delay:0.7s">💖</text>
+        <text x="248" y="318" font-size="11" opacity="0.52" class="svg-float" style="animation-delay:1.3s">✨</text>
+        <text x="33"  y="293" font-size="10" opacity="0.48" class="svg-float" style="animation-delay:1s">💖</text>
+        <text x="190" y="173" font-size="9"  opacity="0.45" class="svg-float" style="animation-delay:1.9s">✨</text>
+        <text x="128" y="158" font-size="8"  opacity="0.42" class="svg-float" style="animation-delay:2.5s">💖</text>
+
+        <!-- watercolour splash base -->
+        <ellipse cx="150" cy="468" rx="128" ry="16" fill="#f9a8d4" opacity="0.22"/>
+        <ellipse cx="94"  cy="465" rx="56"  ry="10" fill="#ec4899"  opacity="0.13"/>
+        <ellipse cx="212" cy="465" rx="52"  ry="9"  fill="#bae6fd"  opacity="0.17"/>
+      </svg>
+    </div>
+
+    <!-- CENTRE: question -->
     <div class="gate-content animate-fadein">
       <div class="gate-icon">💖</div>
       <h1 class="gate-title">Do you love him?</h1>
@@ -25,14 +148,27 @@
         <button id="noBtn" class="btn-no">No</button>
       </div>
     </div>
+
+    <!-- RIGHT CORNER: uploaded couple watercolour photo -->
+    <div class="gate-art gate-art-right">
+      <div class="couple-photo-wrap">
+        <img src="/images/couple_main.jpeg" alt="Us 💖" class="couple-photo"/>
+        <div class="couple-photo-blend"></div>
+        <span class="photo-petal pp1">🌸</span>
+        <span class="photo-petal pp2">💖</span>
+        <span class="photo-petal pp3">✨</span>
+        <span class="photo-petal pp4">🌸</span>
+        <span class="photo-petal pp5">💖</span>
+        <span class="photo-petal pp6">✨</span>
+      </div>
+    </div>
+
   </section>
 
-  <!-- ===================== SECTION 2: BIRTHDAY WISHES ===================== -->
+  <!-- ===================== SECTION 2: BIRTHDAY ===================== -->
   <section id="birthdaySection" class="section-birthday hidden">
     <div class="bday-content">
       <div class="bday-top-hearts animate-fadein">💖 💖 💖</div>
-
-      <!-- Envelope -->
       <div class="bday-envelope animate-fadein" id="bdayEnvelope" onclick="openEnvelope()">
         <div class="envelope-flap"></div>
         <div class="envelope-body">
@@ -40,49 +176,24 @@
           <p class="envelope-hint">Tap to open 💖</p>
         </div>
       </div>
-
-      <!-- Letter (hidden until envelope clicked) -->
       <div class="bday-letter hidden" id="bdayLetter">
         <div class="bday-letter-inner">
           <p class="bday-date">A special message for my special person 💖</p>
           <h2 class="bday-heading">Happy Birthday,<br>My Love 🎂</h2>
           <div class="bday-divider">💖 ✨ 💖</div>
-          <p class="bday-para">
-            On this beautiful day you were born into this world,<br>
-            the universe did something truly magical —<br>
-            it gifted me the most wonderful soul I've ever known. 💖
-          </p>
-          <p class="bday-para">
-            Every single day with you feels like a birthday celebration.<br>
-            You make ordinary moments feel like fairy tales,<br>
-            and my heart sings your name like the sweetest song. 🎶
-          </p>
-          <p class="bday-para">
-            May every candle you blow out carry a wish that comes true.<br>
-            May every year ahead be sweeter, brighter, and fuller<br>
-            because <em>I</em> get to spend it right beside you. 💖
-          </p>
-          <p class="bday-para">
-            You deserve all the love in every universe,<br>
-            all the stars in every sky,<br>
-            and every piece of my heart — today and always. 💖
-          </p>
-          <div class="bday-sig">
-            Forever yours, with all my love 💖<br>
-            <span class="bday-sig-name">Your Person ✨</span>
-          </div>
-          <button class="btn-journey" onclick="showJourney()">
-            See Our Journey Together 💖
-          </button>
+          <p class="bday-para">On this beautiful day you were born into this world,<br>the universe did something truly magical —<br>it gifted me the most wonderful soul I've ever known. 💖</p>
+          <p class="bday-para">Every single day with you feels like a birthday celebration.<br>You make ordinary moments feel like fairy tales,<br>and my heart sings your name like the sweetest song. 🎶</p>
+          <p class="bday-para">May every candle you blow out carry a wish that comes true.<br>May every year ahead be sweeter, brighter, and fuller<br>because <em>I</em> get to spend it right beside you. 💖</p>
+          <p class="bday-para">You deserve all the love in every universe,<br>all the stars in every sky,<br>and every piece of my heart — today and always. 💖</p>
+          <div class="bday-sig">Forever yours, with all my love 💖<br><span class="bday-sig-name">Your Person ✨</span></div>
+          <button class="btn-journey" onclick="showJourney()">See Our Journey Together 💖</button>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ===================== SECTION 3: MAIN CONTENT ===================== -->
+  <!-- ===================== SECTION 3: GALLERY ===================== -->
   <section id="mainContent" class="section-main hidden">
-
     <div class="hero-area">
       <div class="hero-text animate-fadein-delay">
         <span class="hero-eyebrow">A love story told in moments 💖</span>
@@ -90,31 +201,22 @@
         <p class="hero-sub">Every photo below is a piece of my heart.<br>Click each one to relive the magic. 💖</p>
       </div>
     </div>
-
     <div class="gallery-section">
       <h3 class="gallery-title">Moments I Treasure Forever 💖</h3>
       <div class="gallery-grid" id="galleryGrid"></div>
     </div>
-
     <div class="proposal-section" id="proposalSection">
       <div class="proposal-inner">
         <div class="proposal-hearts-row">💖 💖 💖</div>
         <h2 class="proposal-heading">Will you be mine forever?</h2>
-        <p class="proposal-text">
-          Every sunrise is brighter because of you. 💖<br>
-          Every moment feels like a dream I never want to wake from.<br>
-          You are my favourite person in every universe that exists.
-        </p>
-        <button class="btn-forever" onclick="showLoveLetter()">
-          Yes, Forever &amp; Always 💖
-        </button>
+        <p class="proposal-text">Every sunrise is brighter because of you. 💖<br>Every moment feels like a dream I never want to wake from.<br>You are my favourite person in every universe that exists.</p>
+        <button class="btn-forever" onclick="showLoveLetter()">Yes, Forever &amp; Always 💖</button>
       </div>
       <canvas id="confettiCanvas"></canvas>
     </div>
-
   </section>
 
-  <!-- ===================== PHOTO / VIDEO MODAL ===================== -->
+  <!-- PHOTO / VIDEO MODAL -->
   <div id="modal" class="modal-overlay" onclick="closeModal(event)">
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal()">✕</button>
@@ -123,7 +225,7 @@
     </div>
   </div>
 
-  <!-- ===================== LOVE LETTER MODAL ===================== -->
+  <!-- LOVE LETTER MODAL -->
   <div id="loveletterModal" class="loveletter-overlay" onclick="closeLoveLetter(event)">
     <div class="loveletter-box">
       <button class="ll-close-btn" onclick="closeLoveLetter()">✕</button>
@@ -135,20 +237,9 @@
       </div>
       <div class="ll-body">
         <p class="ll-salutation">My Dearest, 💖</p>
-        <p class="ll-text">
-          From the moment you walked into my life, every day has felt like a page
-          from the most beautiful love story ever written. You are my sunrise,
-          my safe harbour, and my greatest adventure all at once. 💖
-        </p>
-        <p class="ll-text">
-          I love the way your eyes light up when you laugh. I love how you make
-          ordinary moments feel extraordinary. I love every quiet heartbeat we've
-          shared, every memory we've woven together, and every dream we've yet to live. 💖
-        </p>
-        <p class="ll-text">
-          So here, in ink and in heart, I ask you —
-          <strong>will you be mine? Forever and always? 💖</strong>
-        </p>
+        <p class="ll-text">From the moment you walked into my life, every day has felt like a page from the most beautiful love story ever written. You are my sunrise, my safe harbour, and my greatest adventure all at once. 💖</p>
+        <p class="ll-text">I love the way your eyes light up when you laugh. I love how you make ordinary moments feel extraordinary. I love every quiet heartbeat we've shared, every memory we've woven together, and every dream we've yet to live. 💖</p>
+        <p class="ll-text">So here, in ink and in heart, I ask you — <strong>will you be mine? Forever and always? 💖</strong></p>
         <p class="ll-closing">With every beat of my heart, now and always, 💖</p>
         <p class="ll-sig">Your Person ✨</p>
       </div>
