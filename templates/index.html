@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Heart, My Everything 💖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- Floating Hearts Background -->
+  <div class="hearts-bg" id="heartsBg"></div>
+
+  <!-- ===================== SECTION 1: GATEKEEPER ===================== -->
+  <section id="gatekeeper" class="section-gatekeeper">
+    <div class="gate-content animate-fadein">
+      <div class="gate-icon">💖</div>
+      <h1 class="gate-title">Do you love him?</h1>
+      <p class="gate-subtitle">Answer carefully, darling... 💖</p>
+      <div class="gate-buttons">
+        <button id="yesBtn" class="btn-yes" onclick="handleYes()">Yes 💖</button>
+        <button id="noBtn" class="btn-no">No</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 2: BIRTHDAY WISHES ===================== -->
+  <section id="birthdaySection" class="section-birthday hidden">
+    <div class="bday-content">
+      <div class="bday-top-hearts animate-fadein">💖 💖 💖</div>
+
+      <!-- Envelope -->
+      <div class="bday-envelope animate-fadein" id="bdayEnvelope" onclick="openEnvelope()">
+        <div class="envelope-flap"></div>
+        <div class="envelope-body">
+          <span class="envelope-heart">💖</span>
+          <p class="envelope-hint">Tap to open 💖</p>
+        </div>
+      </div>
+
+      <!-- Letter (hidden until envelope clicked) -->
+      <div class="bday-letter hidden" id="bdayLetter">
+        <div class="bday-letter-inner">
+          <p class="bday-date">A special message for my special person 💖</p>
+          <h2 class="bday-heading">Happy Birthday,<br>My Love 🎂</h2>
+          <div class="bday-divider">💖 ✨ 💖</div>
+          <p class="bday-para">
+            On this beautiful day you were born into this world,<br>
+            the universe did something truly magical —<br>
+            it gifted me the most wonderful soul I've ever known. 💖
+          </p>
+          <p class="bday-para">
+            Every single day with you feels like a birthday celebration.<br>
+            You make ordinary moments feel like fairy tales,<br>
+            and my heart sings your name like the sweetest song. 🎶
+          </p>
+          <p class="bday-para">
+            May every candle you blow out carry a wish that comes true.<br>
+            May every year ahead be sweeter, brighter, and fuller<br>
+            because <em>I</em> get to spend it right beside you. 💖
+          </p>
+          <p class="bday-para">
+            You deserve all the love in every universe,<br>
+            all the stars in every sky,<br>
+            and every piece of my heart — today and always. 💖
+          </p>
+          <div class="bday-sig">
+            Forever yours, with all my love 💖<br>
+            <span class="bday-sig-name">Your Person ✨</span>
+          </div>
+          <button class="btn-journey" onclick="showJourney()">
+            See Our Journey Together 💖
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 3: MAIN CONTENT ===================== -->
+  <section id="mainContent" class="section-main hidden">
+
+    <div class="hero-area">
+      <div class="hero-text animate-fadein-delay">
+        <span class="hero-eyebrow">A love story told in moments 💖</span>
+        <h2 class="hero-heading">Our Journey Together</h2>
+        <p class="hero-sub">Every photo below is a piece of my heart.<br>Click each one to relive the magic. 💖</p>
+      </div>
+    </div>
+
+    <div class="gallery-section">
+      <h3 class="gallery-title">Moments I Treasure Forever 💖</h3>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+
+    <div class="proposal-section" id="proposalSection">
+      <div class="proposal-inner">
+        <div class="proposal-hearts-row">💖 💖 💖</div>
+        <h2 class="proposal-heading">Will you be mine forever?</h2>
+        <p class="proposal-text">
+          Every sunrise is brighter because of you. 💖<br>
+          Every moment feels like a dream I never want to wake from.<br>
+          You are my favourite person in every universe that exists.
+        </p>
+        <button class="btn-forever" onclick="showLoveLetter()">
+          Yes, Forever &amp; Always 💖
+        </button>
+      </div>
+      <canvas id="confettiCanvas"></canvas>
+    </div>
+
+  </section>
+
+  <!-- ===================== PHOTO / VIDEO MODAL ===================== -->
+  <div id="modal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modalMediaWrap" class="modal-media-wrap"></div>
+      <p id="modalMessage" class="modal-message"></p>
+    </div>
+  </div>
+
+  <!-- ===================== LOVE LETTER MODAL ===================== -->
+  <div id="loveletterModal" class="loveletter-overlay" onclick="closeLoveLetter(event)">
+    <div class="loveletter-box">
+      <button class="ll-close-btn" onclick="closeLoveLetter()">✕</button>
+      <div class="ll-wax-seal">💖</div>
+      <div class="ll-header">
+        <div class="ll-ruling-line"></div>
+        <h3 class="ll-title">A Love Letter</h3>
+        <div class="ll-ruling-line"></div>
+      </div>
+      <div class="ll-body">
+        <p class="ll-salutation">My Dearest, 💖</p>
+        <p class="ll-text">
+          From the moment you walked into my life, every day has felt like a page
+          from the most beautiful love story ever written. You are my sunrise,
+          my safe harbour, and my greatest adventure all at once. 💖
+        </p>
+        <p class="ll-text">
+          I love the way your eyes light up when you laugh. I love how you make
+          ordinary moments feel extraordinary. I love every quiet heartbeat we've
+          shared, every memory we've woven together, and every dream we've yet to live. 💖
+        </p>
+        <p class="ll-text">
+          So here, in ink and in heart, I ask you —
+          <strong>will you be mine? Forever and always? 💖</strong>
+        </p>
+        <p class="ll-closing">With every beat of my heart, now and always, 💖</p>
+        <p class="ll-sig">Your Person ✨</p>
+      </div>
+      <div class="ll-footer-hearts">💖 &nbsp;&nbsp; 💖 &nbsp;&nbsp; 💖</div>
+    </div>
+  </div>
+
+  <script src="/static/js/hearts.js"></script>
+  <script src="/static/js/gallery.js"></script>
+  <script src="/static/js/modal.js"></script>
+  <script src="/static/js/confetti.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
